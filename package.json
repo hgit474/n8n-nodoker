@@ -1,0 +1,16 @@
+{
+  "name": "n8n-on-render",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Self-hosted n8n on Render with safe auto-updates",
+  "engines": {
+    "node": ">=18 <21"
+  },
+  "scripts": {
+    "start": "n8n start",
+    "healthcheck": "node -e \"require('http').get('http://localhost:' + (process.env.PORT || 5678))\""
+  },
+  "dependencies": {
+    "n8n": "^1.0.0"
+  }
+}
