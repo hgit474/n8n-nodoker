@@ -4,15 +4,14 @@
   "version": "1.0.0",
   "description": "Self-hosted n8n on Render with safe auto-updates and production config",
   "engines": {
-    "node": ">=20.15.0"
+  "node": ">=18 <21"
   },
   "scripts": {
     "build": "n8n build",
     "start": "n8n start",
-    "healthcheck": "curl -f http://localhost:$PORT/healthz || exit 1"
+      "healthcheck": "node -e \"require('http').get('http://localhost:' + (process.env.PORT || 5678))\""
   },
   "dependencies": {
     "n8n": "latest"
   }
 }
-
